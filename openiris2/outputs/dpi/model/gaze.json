@@ -1,0 +1,15 @@
+{
+  "id": "dpi/model/gaze",
+  "name": "Gaze from P4 − P1 (model)",
+  "kind": "model",
+  "status": "draft",
+  "user": "What gaze.dpi learned: how P4 − P1 maps to where the subject looks, per eye.",
+  "developer": "From gaze.dpi, in the dpi plugin (OpenIris 2's PLUGINS-SPEC 8.6, 8.10; DPI-SPEC 8). Values: the inputs used (P1 and P4, as two points) (name, output ID, its definition's hash, the producer and its model files' SHA-256); per eye (left, right): the fits (all inputs first), each with its terms (quadratic, cubic, interactions: off unless asked), lambda, intercept, standardization, coefficients and errors, and the offset one target sets; the shift rule (invariance: mm, applied, rule), P1 and P4 moving together isn't gaze; the drift each one target found after the grid (time, error, offset). Quality: the left-out error per eye, deg (left_left_out_deg, right_left_out_deg), and the last drift, per eye (drift_deg: {left, right}). Before a grid, one target sets an average eye's linear map instead (default: true, PLUGINS-SPEC 8.8). The format is the one every regression calibration shares (gaze_regression.hpp).",
+  "fields": [
+    {
+      "id": "groups",
+      "name": "Fits",
+      "type": "object"
+    }
+  ]
+}

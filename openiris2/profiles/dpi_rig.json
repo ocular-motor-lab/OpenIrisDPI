@@ -1,0 +1,36 @@
+{
+  "openiris2_profile": 1,
+  "name": "DPI rig",
+  "description": "Dual Purkinje imaging, Ryan Ressmeyer's method (OpenIrisDPI): two Teledyne cameras at 500 Hz, one per eye. Pupil, P1, P4 and the DPI signal P4 − P1. Not yet checked on real DPI images.",
+  "source": {
+    "type": "spinnaker"
+  },
+  "pipeline": {
+    "eye": [
+      "pupil.centroid.approx",
+      "glints.p1",
+      "pupil.hull",
+      "dpi.p4"
+    ]
+  },
+  "calibration": [
+    "gaze.dpi"
+  ],
+  "settings": {
+    "pipeline.glints.threshold": 245.0,
+    "pipeline.pupil.threshold": 30.0,
+    "source.spinnaker.frame_rate": 500.0
+  },
+  "monitor": {
+    "panels": [
+      "dpi/p4_p1",
+      "size"
+    ]
+  },
+  "adjust": {
+    "hide": [
+      "pipeline.pupil.softness",
+      "pipeline.pupil.max_radius"
+    ]
+  }
+}

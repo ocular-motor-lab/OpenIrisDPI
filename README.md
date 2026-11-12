@@ -8,4 +8,6 @@ If you use OpenIrisDPI in your research, please cite our [paper](https://www.sci
 
 > Ressmeyer, Ryan A., et al. "OpenIrisDPI: An open-source digital dual Purkinje image eye tracker for visual neuroscience." Journal of Neuroscience Methods (2026): 110693.
 
+**OpenIris 2:** the folder [`openiris2`](openiris2/README.md) has this method as a plugin for OpenIris 2, the C++ rewrite of OpenIris, with how to build it on macOS and Windows.
+
 <img src="https://github.com/ryan-ressmeyer/OpenIrisDPI/wiki/assets/OpenIrisSimulation-ohDPI.png" width="100%">

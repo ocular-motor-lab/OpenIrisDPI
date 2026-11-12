@@ -1,0 +1,25 @@
+{
+  "id": "dpi/p4",
+  "name": "P4 (lens back reflection)",
+  "kind": "measure",
+  "scope": "view",
+  "status": "draft",
+  "user": "The fourth Purkinje image: the dim reflection of the light on the back of the lens, seen through the pupil. With P1, it gives the eye's rotation in a dual Purkinje (DPI) tracker.",
+  "developer": "Brightest point inside the pupil (shrunk by an edge margin, P1's surroundings left out), refined as the centroid of brightness above the pupil threshold in a square around it, on the smoothed image (DPI-SPEC 2, 4). Image coordinates, pixel centers at integers (SPEC 9.1). Without a pupil, the pupil's status (no_pupil…); failed when no spot at least min_diameter across is found, or when P1 wasn't found (P1 could be taken for P4). Method: Ryan Ressmeyer's OpenIrisDPI.",
+  "fields": [
+    {
+      "id": "p4",
+      "name": "P4",
+      "type": "point",
+      "units": "px",
+      "help": "Sub-pixel position of the reflection."
+    },
+    {
+      "id": "size",
+      "name": "P4 size",
+      "type": "number",
+      "units": "px",
+      "help": "Diameter of the spot: √(major × minor) of its moment ellipse, each axis 4√λ of the brightness-weighted second moments. A uniform disk's diameter; 4σ for a Gaussian spot."
+    }
+  ]
+}

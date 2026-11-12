@@ -1,0 +1,42 @@
+{
+  "openiris2_profile": 1,
+  "name": "Synthetic eyes, DPI",
+  "description": "The DPI pipeline on synthetic eyes that also show P4, at 500 Hz: try dual Purkinje tracking with no DPI camera. The eyes are small, so the settings are smaller than a real rig's.",
+  "source": {
+    "type": "synthetic"
+  },
+  "pipeline": {
+    "eye": [
+      "pupil.centroid.approx",
+      "glints.p1",
+      "pupil.hull",
+      "dpi.p4"
+    ]
+  },
+  "calibration": [
+    "gaze.dpi"
+  ],
+  "settings": {
+    "pipeline.dpi.blur": 1,
+    "pipeline.dpi.p4.p1_exclusion": 8.0,
+    "pipeline.dpi.p4.roi_radius": 6.0,
+    "pipeline.dpi.search_radius": 80.0,
+    "pipeline.glints.p1.min_diameter": 1.0,
+    "pipeline.glints.p1.roi_radius": 8.0,
+    "pipeline.glints.threshold": 200.0,
+    "source.synthetic.frame_rate": 500.0,
+    "source.synthetic.p4": true
+  },
+  "monitor": {
+    "panels": [
+      "dpi/p4_p1",
+      "size"
+    ]
+  },
+  "adjust": {
+    "hide": [
+      "pipeline.pupil.softness",
+      "pipeline.pupil.max_radius"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "dpi/p4_p1",
+  "name": "P4 − P1",
+  "kind": "measure",
+  "scope": "view",
+  "status": "draft",
+  "user": "Where P4 is relative to P1: the dual Purkinje (DPI) signal. It changes when the eye rotates and hardly at all when the eye or the camera shifts. A calibration turns it into degrees.",
+  "developer": "dpi/p4 minus dpi/p1, in image pixels, from the same frame (DPI-SPEC 1, 4). Good only when both are; otherwise the status of the one missing (P1's first).",
+  "fields": [
+    {
+      "id": "p4_p1",
+      "name": "P4 − P1",
+      "type": "point",
+      "units": "px",
+      "help": "x and y of P4 minus those of P1."
+    }
+  ]
+}

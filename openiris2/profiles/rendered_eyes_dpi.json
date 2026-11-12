@@ -1,0 +1,55 @@
+{
+  "openiris2_profile": 1,
+  "name": "Rendered eyes, DPI",
+  "description": "The DPI pipeline on ray-traced eyes: the DPI camera's geometry (straight ahead, high magnification, one infrared LED), so P1 and P4 come from the cornea and the back of the lens as in a real eye, with exact ground truth. Try dual Purkinje tracking with no DPI rig. 100 Hz on a 432 x 336 region per eye.",
+  "source": {
+    "type": "rendered"
+  },
+  "pipeline": {
+    "eye": [
+      "pupil.centroid.approx",
+      "glints.p1",
+      "pupil.hull",
+      "dpi.p4"
+    ]
+  },
+  "calibration": [
+    "gaze.dpi"
+  ],
+  "settings": {
+    "pipeline.dpi.blur": 1,
+    "pipeline.dpi.p4.max_diameter": 7.0,
+    "pipeline.dpi.p4.p1_exclusion": 20.0,
+    "pipeline.dpi.p4.roi_radius": 10.0,
+    "pipeline.dpi.search_radius": 110.0,
+    "pipeline.glints.p1.min_diameter": 2.0,
+    "pipeline.glints.p1.roi_radius": 15.0,
+    "pipeline.glints.threshold": 240.0,
+    "pipeline.pupil.threshold": 30.0,
+    "source.rendered.camera0.exposure": 0.4,
+    "source.rendered.camera0.roi.height": 336,
+    "source.rendered.camera0.roi.width": 432,
+    "source.rendered.camera0.roi.x": 116,
+    "source.rendered.camera0.roi.y": 64,
+    "source.rendered.camera1.exposure": 0.4,
+    "source.rendered.camera1.roi.height": 336,
+    "source.rendered.camera1.roi.width": 432,
+    "source.rendered.camera1.roi.x": 116,
+    "source.rendered.camera1.roi.y": 64,
+    "source.rendered.frame_rate": 100.0,
+    "source.rendered.lights": "one",
+    "source.rendered.setup": "dpi"
+  },
+  "monitor": {
+    "panels": [
+      "dpi/p4_p1",
+      "size"
+    ]
+  },
+  "adjust": {
+    "hide": [
+      "pipeline.pupil.softness",
+      "pipeline.pupil.max_radius"
+    ]
+  }
+}

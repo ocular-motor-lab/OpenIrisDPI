@@ -1,0 +1,25 @@
+{
+  "id": "dpi/p1",
+  "name": "P1 (corneal reflection)",
+  "kind": "measure",
+  "scope": "view",
+  "status": "draft",
+  "user": "The first Purkinje image: the bright reflection of the light on the front of the cornea. With P4, it gives the eye's rotation in a dual Purkinje (DPI) tracker.",
+  "developer": "Centroid of the spot's brightness above the P1 threshold, in a square around its rough position, on the smoothed image (DPI-SPEC 2, 4). Image coordinates, pixel centers at integers (SPEC 9.1). Status failed when no spot at least min_diameter across is found. Method: Ryan Ressmeyer's OpenIrisDPI.",
+  "fields": [
+    {
+      "id": "p1",
+      "name": "P1",
+      "type": "point",
+      "units": "px",
+      "help": "Sub-pixel position of the reflection."
+    },
+    {
+      "id": "size",
+      "name": "P1 size",
+      "type": "number",
+      "units": "px",
+      "help": "Diameter of the spot: √(major × minor) of its moment ellipse, each axis 4√λ of the brightness-weighted second moments. A uniform disk's diameter; 4σ for a Gaussian spot."
+    }
+  ]
+}

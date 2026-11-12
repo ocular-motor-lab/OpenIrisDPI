@@ -1,0 +1,30 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {"major": 3, "minor": 24, "patch": 0},
+  "configurePresets": [
+    {
+      "name": "macos",
+      "displayName": "macOS (Ninja, Release)",
+      "description": "Against an OpenIris 2 built on this Mac: give -DOpenIris2_DIR=<its build folder> (~/Developer/OpenIris2/build by default).",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "OpenIris2_DIR": "$env{HOME}/Developer/OpenIris2/build"
+      },
+      "condition": {"type": "equals", "lhs": "${hostSystemName}", "rhs": "Darwin"}
+    },
+    {
+      "name": "windows",
+      "displayName": "Windows (Visual Studio 2022, x64)",
+      "description": "Against an OpenIris 2 built on this PC with the same Visual Studio: give -DOpenIris2_DIR=<its build folder>.",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "OpenIris2_DIR": "$env{USERPROFILE}/Developer/OpenIris2/build"
+      },
+      "condition": {"type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows"}
+    }
+  ]
+}
